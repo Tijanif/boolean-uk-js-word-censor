@@ -47,23 +47,21 @@ const text =
 function myCensor (wordToCensor, wordInArrayTocentor, wordreplace) {
   let wordArray =  wordToCensor.split(' ')
   let count = 0
-  let finalStr = ''
+  
   for(word of wordArray) {
     if(word === wordInArrayTocentor){
       let wordIndex = wordArray.indexOf(word) 
       wordArray[wordIndex] = wordreplace
       count += 1;
-      finalStr += " " + word
-    } else {
-      finalStr += " " + word
-    }
+      
+    } 
     
     
   }
   
   return   {
     text: wordArray.join(' '),
-    finalStr: finalStr,
+    
     count: count
   }
   
@@ -73,7 +71,7 @@ function myCensor (wordToCensor, wordInArrayTocentor, wordreplace) {
 
 console.log(censorInfo.text)
 console.log(censorInfo.count)
-console.log(censorInfo.finalStr)
+
 
 // Challenge 2
 
@@ -87,4 +85,3 @@ let dynamiCensor = myCensor(dynamicText, wordsToCensor, 'tati')
 
 console.log(dynamiCensor.text)
 console.log(dynamiCensor.count)
-console.log(dynamiCensor.finalStr)
