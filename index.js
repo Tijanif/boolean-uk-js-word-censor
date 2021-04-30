@@ -44,26 +44,47 @@ const text =
 //Create a function that takes a replacement string, a word to censor, and censors the text input
 
 
-function myCensor (wordToCensor, wordInArrayTocentor) {
+function myCensor (wordToCensor, wordInArrayTocentor, wordreplace) {
   let wordArray =  wordToCensor.split(' ')
   let count = 0
+  let finalStr = ''
   for(word of wordArray) {
     if(word === wordInArrayTocentor){
       let wordIndex = wordArray.indexOf(word) 
-      wordArray[wordIndex] = "@@@@@@"
+      wordArray[wordIndex] = wordreplace
       count += 1;
+      finalStr += " " + word
+    } else {
+      finalStr += " " + word
     }
+    
     
   }
   
   return   {
-    text: wordArray.toString(),
+    text: wordArray.join(' '),
+    finalStr: finalStr,
     count: count
   }
   
 }
 //Print out the censored text to the console
-  let censorInfo = myCensor(text, 'dolor')
+  let censorInfo = myCensor(text, 'dolor', 'shit')
 
 console.log(censorInfo.text)
 console.log(censorInfo.count)
+console.log(censorInfo.finalStr)
+
+// Challenge 2
+
+// The full text to censor
+const dynamicText = prompt("what text do you want to check")
+console.log(dynamicText)
+// The words to be censored
+const wordsToCensor = prompt("what word will you like to censor")
+// What should replace the censored words
+let dynamiCensor = myCensor(dynamicText, wordsToCensor, 'tati')
+
+console.log(dynamiCensor.text)
+console.log(dynamiCensor.count)
+console.log(dynamiCensor.finalStr)
