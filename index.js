@@ -42,20 +42,28 @@ const text =
 
 
 //Create a function that takes a replacement string, a word to censor, and censors the text input
-function myCensor (wordToCensor) {
-  let wordArray =  wordToCensor.split(' ')
-  let wordInArrayTocentor = "dolore"
-  for(word of wordArray) {
-    
-    if(word === wordInArrayTocentor){
 
+
+function myCensor (wordToCensor, wordInArrayTocentor) {
+  let wordArray =  wordToCensor.split(' ')
+  let count = 0
+  for(word of wordArray) {
+    if(word === wordInArrayTocentor){
       let wordIndex = wordArray.indexOf(word) 
-      wordArray[wordIndex] = "@@@@@@@@"
-      
+      wordArray[wordIndex] = "@@@@@@"
+      count += 1;
     }
+    
   }
-  return wordArray.toString(' ');;
+  
+  return   {
+    text: wordArray.toString(),
+    count: count
+  }
+  
 }
 //Print out the censored text to the console
-console.log(text)
-console.log(myCensor(text))
+  let censorInfo = myCensor(text, 'dolor')
+
+console.log(censorInfo.text)
+console.log(censorInfo.count)
