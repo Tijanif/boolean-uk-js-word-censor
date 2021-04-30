@@ -40,7 +40,22 @@ const text =
   sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 
-//Use the provided string as a text input to be censored
-//You don't have to use prompts for now, just hard-code the rest of your user inputs
+
 //Create a function that takes a replacement string, a word to censor, and censors the text input
-//Print out the censored text to the consol
+function myCensor (wordToCensor) {
+  let wordArray =  wordToCensor.split(' ')
+  let wordInArrayTocentor = "dolore"
+  for(word of wordArray) {
+    
+    if(word === wordInArrayTocentor){
+
+      let wordIndex = wordArray.indexOf(word) 
+      wordArray[wordIndex] = "@@@@@@@@"
+      
+    }
+  }
+  return wordArray.toString(' ');;
+}
+//Print out the censored text to the console
+console.log(text)
+console.log(myCensor(text))
