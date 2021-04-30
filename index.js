@@ -43,4 +43,4 @@ const text =
 //Use the provided string as a text input to be censored
 //You don't have to use prompts for now, just hard-code the rest of your user inputs
 //Create a function that takes a replacement string, a word to censor, and censors the text input
-//Print out the censored text to the console
+//Print out the censored text to the consol
