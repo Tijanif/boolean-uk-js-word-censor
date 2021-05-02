@@ -67,7 +67,7 @@ function myCensor (wordToCensor, wordInArrayTocentor, wordreplace) {
   
 }
 //Print out the censored text to the console
-  let censorInfo = myCensor(text, 'dolor', 'shit')
+  let censorInfo = myCensor(text, 'dolor', 'JAM')
 
 console.log(censorInfo.text)
 console.log(censorInfo.count)
@@ -81,7 +81,7 @@ console.log(dynamicText)
 // The words to be censored
 const wordsToCensor = prompt("what word will you like to censor")
 // What should replace the censored words
-let dynamiCensor = myCensor(dynamicText, wordsToCensor, 'tati')
+let dynamiCensor = myCensor(dynamicText, wordsToCensor, 'JAM')
 
 console.log(dynamiCensor.text)
 console.log(dynamiCensor.count)
